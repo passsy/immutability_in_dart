@@ -13,10 +13,7 @@ class _$ProductTearOff {
   const _$ProductTearOff();
 
   _ProductDataClass call(
-      {@required String name,
-      @required int price,
-      @required String productImage,
-      @required bool featured}) {
+      {String name, int price, @nullable String productImage, bool featured}) {
     return _ProductDataClass(
       name: name,
       price: price,
@@ -32,6 +29,7 @@ const $Product = _$ProductTearOff();
 mixin _$Product {
   String get name;
   int get price;
+  @nullable
   String get productImage;
   bool get featured;
 
@@ -41,7 +39,8 @@ mixin _$Product {
 abstract class $ProductCopyWith<$Res> {
   factory $ProductCopyWith(Product value, $Res Function(Product) then) =
       _$ProductCopyWithImpl<$Res>;
-  $Res call({String name, int price, String productImage, bool featured});
+  $Res call(
+      {String name, int price, @nullable String productImage, bool featured});
 }
 
 class _$ProductCopyWithImpl<$Res> implements $ProductCopyWith<$Res> {
@@ -75,7 +74,8 @@ abstract class _$ProductDataClassCopyWith<$Res>
           _ProductDataClass value, $Res Function(_ProductDataClass) then) =
       __$ProductDataClassCopyWithImpl<$Res>;
   @override
-  $Res call({String name, int price, String productImage, bool featured});
+  $Res call(
+      {String name, int price, @nullable String productImage, bool featured});
 }
 
 class __$ProductDataClassCopyWithImpl<$Res> extends _$ProductCopyWithImpl<$Res>
@@ -107,20 +107,14 @@ class __$ProductDataClassCopyWithImpl<$Res> extends _$ProductCopyWithImpl<$Res>
 
 class _$_ProductDataClass implements _ProductDataClass {
   const _$_ProductDataClass(
-      {@required this.name,
-      @required this.price,
-      @required this.productImage,
-      @required this.featured})
-      : assert(name != null),
-        assert(price != null),
-        assert(productImage != null),
-        assert(featured != null);
+      {this.name, this.price, @nullable this.productImage, this.featured});
 
   @override
   final String name;
   @override
   final int price;
   @override
+  @nullable
   final String productImage;
   @override
   final bool featured;
@@ -161,16 +155,17 @@ class _$_ProductDataClass implements _ProductDataClass {
 
 abstract class _ProductDataClass implements Product {
   const factory _ProductDataClass(
-      {@required String name,
-      @required int price,
-      @required String productImage,
-      @required bool featured}) = _$_ProductDataClass;
+      {String name,
+      int price,
+      @nullable String productImage,
+      bool featured}) = _$_ProductDataClass;
 
   @override
   String get name;
   @override
   int get price;
   @override
+  @nullable
   String get productImage;
   @override
   bool get featured;

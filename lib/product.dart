@@ -6,9 +6,9 @@ part 'product.freezed.dart';
 @freezed
 abstract class Product with _$Product {
   const factory Product({
-    @required String name,
-    @required int price,
-    @required String productImage,
-    @required bool featured,
+    String name,
+    int price,
+    @nullable String productImage,
+    bool featured,
   }) = _ProductDataClass;
 }
