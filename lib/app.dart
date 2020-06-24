@@ -25,23 +25,23 @@ class HomePage extends StatelessWidget {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        title: Text("Dash Store"),
+        title: const Text("Dash Store"),
       ),
       body: ConstrainedBox(
-        constraints: BoxConstraints(minWidth: double.infinity),
+        constraints: const BoxConstraints(minWidth: double.infinity),
         child: Column(
           children: [
             RaisedButton(
-              child: Text("Best Sellers"),
               onPressed: () {
                 Navigator.of(context).push(FeaturedProducts.route());
               },
+              child: const Text("Best Sellers"),
             ),
             RaisedButton(
-              child: Text("View All Products"),
               onPressed: () {
                 Navigator.of(context).push(AllProducts.route());
               },
+              child: const Text("View All Products"),
             ),
           ],
         ),

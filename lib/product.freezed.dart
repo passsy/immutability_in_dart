@@ -13,7 +13,10 @@ class _$ProductTearOff {
   const _$ProductTearOff();
 
   _ProductDataClass call(
-      {String name, int price, @nullable String productImage, bool featured}) {
+      {@required String name,
+      @required int price,
+      @nullable String productImage,
+      @required bool featured}) {
     return _ProductDataClass(
       name: name,
       price: price,
@@ -107,7 +110,13 @@ class __$ProductDataClassCopyWithImpl<$Res> extends _$ProductCopyWithImpl<$Res>
 
 class _$_ProductDataClass implements _ProductDataClass {
   const _$_ProductDataClass(
-      {this.name, this.price, @nullable this.productImage, this.featured});
+      {@required this.name,
+      @required this.price,
+      @nullable this.productImage,
+      @required this.featured})
+      : assert(name != null),
+        assert(price != null),
+        assert(featured != null);
 
   @override
   final String name;
@@ -155,10 +164,10 @@ class _$_ProductDataClass implements _ProductDataClass {
 
 abstract class _ProductDataClass implements Product {
   const factory _ProductDataClass(
-      {String name,
-      int price,
+      {@required String name,
+      @required int price,
       @nullable String productImage,
-      bool featured}) = _$_ProductDataClass;
+      @required bool featured}) = _$_ProductDataClass;
 
   @override
   String get name;

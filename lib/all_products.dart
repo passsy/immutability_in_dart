@@ -19,7 +19,7 @@ class AllProducts extends StatelessWidget {
       ),
       body: Builder(builder: (context) {
         if (model.isLoading) {
-          return Center(child: CircularProgressIndicator());
+          return const Center(child: CircularProgressIndicator());
         }
         return ProductGrid(products: products);
       }),
