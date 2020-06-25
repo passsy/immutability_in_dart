@@ -1,8 +1,8 @@
 import 'package:flutter/material.dart';
-import 'package:immutability_in_dart/featured_products.dart';
+import 'package:immutability_in_dart/api/shop_api.dart';
+import 'package:immutability_in_dart/pages/featured_products.dart';
 import 'package:immutability_in_dart/shop_model.dart';
-import 'package:immutability_in_dart/api.dart';
-import 'package:immutability_in_dart/all_products.dart';
+import 'package:immutability_in_dart/pages/all_products.dart';
 import 'package:provider/provider.dart';
 
 class ShoppingListApp extends StatelessWidget {

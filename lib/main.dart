@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 
-import 'app.dart';
+import 'pages/home.dart';
 
 void main() {
   runApp(ShoppingListApp());

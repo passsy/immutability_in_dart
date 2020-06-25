@@ -7,24 +7,16 @@ Twitter|Github: @passsy
 
 
 ## Agenda
-- [ ] What's an immutable object? 
+- [ ] What's an immutable object?
 - [ ] Makes debugging easy
 - [ ] Generate boilerplate 
   - [IntelliJ](https://github.com/andrasferenczi/dart-data-plugin)
   - [VScode](https://github.com/bnxm/Dart-Data-Class-Generator)
-- [ ] Talk to other systems -> immutable
 - [ ] Immutable collections (kt_dart, built_collection,...)
-- [ ] Prevent bugs in your app
-- [ ] I broke up with you
-- [ ] 
-- [ ] 
-- [ ] 
-- [ ] 
-- [ ] 
-- [ ] 
-- [ ] 
-- [ ] 
-- [ ] 
-- [ ] 
-- [ ] 
-    
+- [ ] Easier data classes with @freezed
+- [ ] Talk to other systems -> messages are immutable
+- [ ] Breaking a part of your app noone has touched in months
+- [ ] Prevent bug using immutable datatypes
+- [ ] Freezed union types, deep copy, custom
+
+Questions? Ask me on Twitter: @passsy

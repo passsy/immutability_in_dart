@@ -15,12 +15,12 @@ class _$ProductTearOff {
   _ProductDataClass call(
       {@required String name,
       @required int price,
-      @nullable String productImage,
+      @nullable String imageUrl,
       @required bool featured}) {
     return _ProductDataClass(
       name: name,
       price: price,
-      productImage: productImage,
+      imageUrl: imageUrl,
       featured: featured,
     );
   }
@@ -33,7 +33,7 @@ mixin _$Product {
   String get name;
   int get price;
   @nullable
-  String get productImage;
+  String get imageUrl;
   bool get featured;
 
   $ProductCopyWith<Product> get copyWith;
@@ -42,8 +42,7 @@ mixin _$Product {
 abstract class $ProductCopyWith<$Res> {
   factory $ProductCopyWith(Product value, $Res Function(Product) then) =
       _$ProductCopyWithImpl<$Res>;
-  $Res call(
-      {String name, int price, @nullable String productImage, bool featured});
+  $Res call({String name, int price, @nullable String imageUrl, bool featured});
 }
 
 class _$ProductCopyWithImpl<$Res> implements $ProductCopyWith<$Res> {
@@ -57,15 +56,13 @@ class _$ProductCopyWithImpl<$Res> implements $ProductCopyWith<$Res> {
   $Res call({
     Object name = freezed,
     Object price = freezed,
-    Object productImage = freezed,
+    Object imageUrl = freezed,
     Object featured = freezed,
   }) {
     return _then(_value.copyWith(
       name: name == freezed ? _value.name : name as String,
       price: price == freezed ? _value.price : price as int,
-      productImage: productImage == freezed
-          ? _value.productImage
-          : productImage as String,
+      imageUrl: imageUrl == freezed ? _value.imageUrl : imageUrl as String,
       featured: featured == freezed ? _value.featured : featured as bool,
     ));
   }
@@ -77,8 +74,7 @@ abstract class _$ProductDataClassCopyWith<$Res>
           _ProductDataClass value, $Res Function(_ProductDataClass) then) =
       __$ProductDataClassCopyWithImpl<$Res>;
   @override
-  $Res call(
-      {String name, int price, @nullable String productImage, bool featured});
+  $Res call({String name, int price, @nullable String imageUrl, bool featured});
 }
 
 class __$ProductDataClassCopyWithImpl<$Res> extends _$ProductCopyWithImpl<$Res>
@@ -94,15 +90,13 @@ class __$ProductDataClassCopyWithImpl<$Res> extends _$ProductCopyWithImpl<$Res>
   $Res call({
     Object name = freezed,
     Object price = freezed,
-    Object productImage = freezed,
+    Object imageUrl = freezed,
     Object featured = freezed,
   }) {
     return _then(_ProductDataClass(
       name: name == freezed ? _value.name : name as String,
       price: price == freezed ? _value.price : price as int,
-      productImage: productImage == freezed
-          ? _value.productImage
-          : productImage as String,
+      imageUrl: imageUrl == freezed ? _value.imageUrl : imageUrl as String,
       featured: featured == freezed ? _value.featured : featured as bool,
     ));
   }
@@ -112,7 +106,7 @@ class _$_ProductDataClass implements _ProductDataClass {
   const _$_ProductDataClass(
       {@required this.name,
       @required this.price,
-      @nullable this.productImage,
+      @nullable this.imageUrl,
       @required this.featured})
       : assert(name != null),
         assert(price != null),
@@ -124,13 +118,13 @@ class _$_ProductDataClass implements _ProductDataClass {
   final int price;
   @override
   @nullable
-  final String productImage;
+  final String imageUrl;
   @override
   final bool featured;
 
   @override
   String toString() {
-    return 'Product(name: $name, price: $price, productImage: $productImage, featured: $featured)';
+    return 'Product(name: $name, price: $price, imageUrl: $imageUrl, featured: $featured)';
   }
 
   @override
@@ -141,9 +135,9 @@ class _$_ProductDataClass implements _ProductDataClass {
                 const DeepCollectionEquality().equals(other.name, name)) &&
             (identical(other.price, price) ||
                 const DeepCollectionEquality().equals(other.price, price)) &&
-            (identical(other.productImage, productImage) ||
+            (identical(other.imageUrl, imageUrl) ||
                 const DeepCollectionEquality()
-                    .equals(other.productImage, productImage)) &&
+                    .equals(other.imageUrl, imageUrl)) &&
             (identical(other.featured, featured) ||
                 const DeepCollectionEquality()
                     .equals(other.featured, featured)));
@@ -154,7 +148,7 @@ class _$_ProductDataClass implements _ProductDataClass {
       runtimeType.hashCode ^
       const DeepCollectionEquality().hash(name) ^
       const DeepCollectionEquality().hash(price) ^
-      const DeepCollectionEquality().hash(productImage) ^
+      const DeepCollectionEquality().hash(imageUrl) ^
       const DeepCollectionEquality().hash(featured);
 
   @override
@@ -166,7 +160,7 @@ abstract class _ProductDataClass implements Product {
   const factory _ProductDataClass(
       {@required String name,
       @required int price,
-      @nullable String productImage,
+      @nullable String imageUrl,
       @required bool featured}) = _$_ProductDataClass;
 
   @override
@@ -175,7 +169,7 @@ abstract class _ProductDataClass implements Product {
   int get price;
   @override
   @nullable
-  String get productImage;
+  String get imageUrl;
   @override
   bool get featured;
   @override

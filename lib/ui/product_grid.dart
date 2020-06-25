@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:immutability_in_dart/product.dart';
+import 'package:immutability_in_dart/data/product.dart';
 
 class ProductGrid extends StatelessWidget {
   const ProductGrid({
@@ -22,7 +22,7 @@ class ProductGrid extends StatelessWidget {
               ConstrainedBox(
                 constraints: BoxConstraints(minWidth: double.infinity),
                 child: Image.network(
-                  product.productImage,
+                  product.imageUrl,
                   fit: BoxFit.cover,
                 ),
               ),
