@@ -1,4 +1,5 @@
 import 'package:freezed_annotation/freezed_annotation.dart';
+import 'package:immutability_in_dart/data/product.dart';
 import 'package:kt_dart/kt.dart';
 
 class MyProduct {
@@ -6,6 +7,8 @@ class MyProduct {
   final int price;
   final String imageUrl;
   final bool featured;
+
+//<editor-fold desc="Data Methods" defaultstate="collapsed">
 
   const MyProduct({
     @required this.name,
@@ -27,7 +30,7 @@ class MyProduct {
       return this;
     }
 
-    return MyProduct(
+    return new MyProduct(
       name: name ?? this.name,
       price: price ?? this.price,
       imageUrl: imageUrl ?? this.imageUrl,
@@ -37,7 +40,7 @@ class MyProduct {
 
   @override
   String toString() {
-    return 'Product{name: $name, price: $price, imageUrl: $imageUrl, featured: $featured}';
+    return 'MyProduct{name: $name, price: $price, imageUrl: $imageUrl, featured: $featured}';
   }
 
   @override
@@ -52,24 +55,43 @@ class MyProduct {
 
   @override
   int get hashCode => name.hashCode ^ price.hashCode ^ imageUrl.hashCode ^ featured.hashCode;
+
+  factory MyProduct.fromMap(Map<String, dynamic> map) {
+    return new MyProduct(
+      name: map['name'] as String,
+      price: map['price'] as int,
+      imageUrl: map['imageUrl'] as String,
+      featured: map['featured'] as bool,
+    );
+  }
+
+  Map<String, dynamic> toMap() {
+    // ignore: unnecessary_cast
+    return {
+      'name': this.name,
+      'price': this.price,
+      'imageUrl': this.imageUrl,
+      'featured': this.featured,
+    } as Map<String, dynamic>;
+  }
+
+//</editor-fold>
+
 }
 
 void main() {
+  final a = MyProduct(name: "Dash", price: 100, imageUrl: "todo", featured: true);
+  final b = a.copyWith(imageUrl: null);
+  print(b);
+
   final dash = MyProduct(name: "Dash", price: 100, imageUrl: "todo", featured: false);
-  final dash2 = MyProduct(name: "Dash2", price: 100, imageUrl: "todo", featured: false);
-  print(dash == dash2);
-  print(dash);
-  final gopher = MyProduct(name: "Gopher", price: 90, imageUrl: "todo", featured: false);
+  final gopher = MyProduct(name: "Gopher", price: 100, imageUrl: "todo", featured: false);
 
   final products = KtList.of(dash, gopher);
-  final birdsAreFeatured = featureBirds(products);
-  print(birdsAreFeatured);
+  final features = featureBirds(products);
+  print(features);
 
-  final mutableList = products.toMutableList()
-    ..remove(dash)
-    ..add(dash2);
-
-  print(mutableList);
+  final mutable = products.toMutableList()..remove(dash);
   print(products);
 }
 

@@ -15,5 +15,5 @@ abstract class Product with _$Product {
 void main() {
   final a = Product(name: "Dash", price: 100, imageUrl: "todo", featured: true);
   final b = a.copyWith(imageUrl: null);
-  print(a == b);
+  print(b);
 }

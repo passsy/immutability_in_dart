@@ -12,18 +12,18 @@ class FeaturedProducts extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     final model = context.watch<ShopModel>();
-    final onlyFeatured = model.products.filter((it) => !it.featured);
+    final products = model.products.filter((it) => !it.featured);
 
     return Scaffold(
       appBar: AppBar(
         backgroundColor: Colors.redAccent,
-        title: Text("Featured (${onlyFeatured.size})"),
+        title: Text("Featured (${products.size})"),
       ),
       body: Builder(builder: (context) {
         if (model.isLoading) {
           return const Center(child: CircularProgressIndicator());
         }
-        return ProductGrid(products: onlyFeatured.asList());
+        return ProductGrid(products: products.asList());
       }),
     );
   }
